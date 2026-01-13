@@ -1,0 +1,266 @@
+* { margin: 0;
+    padding: 0;
+    box-sizing:border-box; }
+
+:root {
+  --bg: #0f0c1f;
+  --text: #eae6ff;
+  --accent: #6b35ff;
+  --accent2: #b48fff;
+  --border: #2d2654;
+}
+ul, li, summary {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: var(--text); }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+
+  padding: 0 40px;
+  line-height: 1.6;
+
+  height: 100%;
+  min-height: 100%;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem 10rem;
+  
+  div {
+    color: var(--text);
+    font-weight: bolder;
+    letter-spacing: 0.05rem;
+    font-size: 1.2rem;
+
+    >span {
+        font-size: 2.2rem;
+        color: var(--accent);
+    }
+  }
+
+}
+
+nav {
+    font-size: 1.1rem;
+    flex: 1;
+
+}
+
+nav a {
+  color: var(--text);
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+nav a:hover {
+  color: var(--accent);
+}
+
+nav ul {
+    display: flex;
+    gap: 3.5rem;
+    justify-content: right;
+}
+
+#hero {
+  display: grid;
+  grid-template-columns:repeat(2,1fr);
+  align-items: flex-start;
+  justify-items: flex-end;
+  padding: 4rem 10rem;
+  gap: 4rem;
+}
+
+article h1 {
+  color: var(--accent2);
+  font-weight: bolder;
+  font-size: 5.5rem;
+  line-height: 5.5rem;
+  margin-bottom: 2rem;
+}
+
+article p {
+    font-weight: 300;
+    font-size: 1.2rem;
+    letter-spacing: 0.07rem;
+}
+
+.intro {
+    letter-spacing: -0.05rem;
+}
+
+.emphasis {
+  color: var(--accent);
+}
+
+.frame {
+  width: 300px;
+  border-radius: 50%;
+  border: 1px solid var(--accent2);
+  align-items: center;
+  width: 450px; height: 450px;
+  display: flex;
+  justify-content: center;
+
+  img {
+    width: 80%;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    border-radius: 50%;
+  }
+}
+
+.buttons {
+  margin-top: 2rem;
+  display: flex;
+  gap: 1rem;
+}
+
+.btn {
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.9rem;
+  transition: background-color 0.5s ease;
+}
+
+.btn.primary {
+  background: var(--accent);
+  color: #fff;
+  padding: 0.5rem;
+  line-height: 2;
+}
+
+.btn.outline {
+  border: 2px solid var(--accent);
+  color: var(--accent);
+}
+
+.btn.primary:hover {
+    background-color: var(--accent2); /* tom mais claro do roxo */
+   
+}
+
+.btn.outline:hover {
+    background-color: var(--accent);
+    color: var(--text);
+}
+
+#projetos, #sobre, #skills, footer {
+  padding: 4rem 10rem;
+  border-top: 1px solid var(--border);
+}
+
+#projetos h2, #sobre h2, #skills h2 {
+  color: var(--accent2);
+  font-size: 3.2rem;
+}
+
+#projetos .card h3 {
+    color: var(--accent);
+    margin-bottom: 1rem;
+}
+
+.card img {
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+}
+
+#sobre p {
+    margin-bottom: 1.2rem;
+    font-size: 1.1rem;
+    font-weight: 300;
+    
+}
+
+
+
+footer h2 {
+    color: var(--accent2);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.card {
+  background: #1a1631;
+  padding: 1.5rem;
+  border-radius: 12px;
+  transition: transform 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.skills {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin-top: 1rem;
+  width: 100%;
+}
+
+.list h3 {
+  color: var(--accent);
+  margin-bottom: 1rem;
+}
+
+a {
+  color: var(--accent2);
+}
+
+footer h3 {
+  color: var(--accent);
+  text-align: left;
+  font-weight: bolder;
+  letter-spacing: 0.05rem;
+  font-size: 1.5rem;
+  opacity: 0.8;
+}
+
+footer nav ul {
+    justify-self: start;
+    margin-bottom: 3rem;
+    gap: 3.5rem;
+    
+}
+
+footer .buttons {
+  margin-bottom: 3rem;
+}
+
+footer p {
+    font-size: 0.8rem;
+    opacity: 0.7;
+    text-align: right;
+}
+
+@media (max-width: 800px) {
+  #hero {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  .frame img {
+    margin: 2rem auto;
+  }
+}
+
