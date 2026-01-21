@@ -1,9 +1,11 @@
+/* RESET */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+/* VARIÁVEIS — IGUAIS À INDEX */
 :root {
   --bg: #0f0c1f;
   --text: #eae6ff;
@@ -12,20 +14,26 @@
   --border: #2d2654;
 }
 
-a {
-  text-decoration: none;
-  color: inherit;
-}
-
-
+/* BASE */
 body {
   background: var(--bg);
   color: var(--text);
   font-family: "Poppins", sans-serif;
   min-height: 100vh;
+  line-height: 1.6;
 }
 
-/* LAYOUT PADRÃO (alinha tudo igual) */
+a {
+  text-decoration: none;
+  color: var(--text);
+  transition: color 0.3s;
+}
+
+a:hover {
+  color: var(--accent);
+}
+
+/* LAYOUT PADRÃO (MESMO RITMO DA INDEX) */
 header,
 main,
 footer {
@@ -33,7 +41,6 @@ footer {
 }
 
 /* HEADER */
-
 header {
   display: flex;
   justify-content: space-between;
@@ -58,36 +65,33 @@ nav ul {
 }
 
 nav a {
-  text-decoration: none;
-  color: var(--text);
-  transition: color 0.3s;
   font-weight: 400;
 }
 
-nav a:hover {
-  color: var(--accent);
-}
-
-/* MAIN */
-
+/* MAIN — CONTATO */
 #contato {
-  padding: 6rem 8rem;
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;;
+  align-items: center;
+  gap: 4rem;
 }
 
-.content {
+.contato-texto {
   max-width: 600px;
 }
 
-.content h1 {
+.contato-texto h1 {
   font-size: 3.5rem;
+  font-weight: 700;
   color: var(--accent2);
   margin-bottom: 1.5rem;
+  line-height: 3.7rem;
 }
 
-.content p {
+.contato-texto p{
   font-size: 1.2rem;
   font-weight: 300;
-  margin-bottom: 3rem;
+  margin-bottom: 1.5rem;
   line-height: 1.7;
 }
 
@@ -97,18 +101,18 @@ nav a:hover {
   list-style: none;
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: 1rem;
 }
 
-.contact-list li strong {
+.contact-list strong {
   display: block;
   color: var(--accent);
-  margin-bottom: 0.2rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
 }
 
 .contact-list a {
   color: var(--accent2);
-  text-decoration: none;
   font-size: 1.05rem;
 }
 
@@ -116,26 +120,99 @@ nav a:hover {
   text-decoration: underline;
 }
 
-/* FOOTER */
+/* IMAGEM — MESMO CONCEITO DA HERO */
+.contato-image {
+  width: 420px;
+  height: 420px;
+  border-radius: 50%;
+  border: 1px solid var(--accent2);
+  display: flex;
+  grid-column: 2;
+  align-items: center;
+  justify-content: center;
+  justify-self: end;
+}
 
+.contato-image img {
+  width: 80%;
+  height: 80%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+/* FOOTER */
 footer {
-  padding: 2rem 10rem;
   border-top: 1px solid var(--border);
   text-align: right;
   font-size: 0.85rem;
   opacity: 0.7;
+  padding-top: 2rem;
 }
 
 /* RESPONSIVO */
-
 @media (max-width: 900px) {
   header,
-  #contato,
+  main,
   footer {
     padding: 2rem;
   }
 
-  .content h1 {
+  header {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  nav ul {
+    justify-content: center;
+    gap: 2rem;
+  }
+
+  #contato {
+  grid-template-columns: 1fr;
+  gap: 3rem;
+  }
+
+  .contato-texto {
+    text-align: center;
+    order: 1;
+  }
+  
+
+  .contato-texto h1 {
     font-size: 2.5rem;
+    line-height: 2.7rem;
+  }
+
+  .contato-texto p {
+    font-size: 1rem;
+  }
+
+  .contact-list {
+    align-items: center;
+  }
+
+  .contact-list a {
+    font-size: 1.1rem;
+  }
+
+  .contact-list li {
+    text-align: center;
+    padding: 0.5rem 0;
+  }
+
+  .contato-image {
+    grid-column: auto;
+    justify-self: center;
+    width: 280px;
+    height: 280px;
+    margin: 2rem auto;
+    order: 2;
+    transition: transform 0.3s ease;
+  }
+
+
+  footer {
+    text-align: center;
+    margin-top: 3rem;
   }
 }
